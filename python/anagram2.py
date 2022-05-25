@@ -1,4 +1,18 @@
-# Don't forget to run the tests (and create some of your own)
+from collections import Counter
+
 
 def anagrams_for(word, list_of_words):
-		# your code here
+    """
+    Returns words from the given list which are anagrams of the given word.
+
+    Args:
+        word (str): The word to find anagrams for.
+        list_of_words (list): The list of words to search.
+
+    Returns:
+        list: A list of anagrams of the given word.
+    """
+
+    word_counter = Counter(word)
+
+    return [w for w in list_of_words if Counter(w) == word_counter]
